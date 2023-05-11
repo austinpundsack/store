@@ -1,0 +1,19 @@
+<mat-card *ngIf="product" [ngClass]="'text-center'">
+  <div>
+    <img class="mb-1 mx-auto" height="150px" [src]="product.image" />
+    <div class="w-full">
+      <div>
+        <h5>{{ product.category }}</h5>
+        <p class="truncate hover:whitespace-normal" [ngClass]="'truncate'">
+          {{ product.title }}
+        </p>
+      </div>
+      <div class="flex justify-between">
+        <span class="text-red-400">{{ product.price | currency }}</span>
+        <button (click)="onAddToCart()">
+          <mat-icon class="text-gray-500">shopping_cart</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</mat-card>
